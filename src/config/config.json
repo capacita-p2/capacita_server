@@ -4,20 +4,23 @@
     "password": "SENHAsenha123",
     "database": "capacita",
     "host": "localhost",
-    "dialect": "mssql"
+    "dialect": "mssql",
+    "port": "1433"
   },
   "test": {
     "username": "sa",
     "password": "SENHAsenha123",
     "database": "capacita",
     "host": "localhost",
-    "dialect": "mssql"
+    "dialect": "mssql",
+    "port": "1433"
   },
   "production": {
     "username": "sa",
     "password": "SENHAsenha123",
     "database": "capacita",
     "host": "localhost",
-    "dialect": "mssql"
+    "dialect": "mssql",
+    "port": "1433"
   }
 }
