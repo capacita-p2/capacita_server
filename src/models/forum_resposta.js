@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Usuario_pcd extends Model {
+  class Forum_resposta extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -13,21 +13,14 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   };
-  Usuario_pcd.init({
+  Forum_resposta.init({
+    resposta: DataTypes.TEXT,
+    id_topico: DataTypes.INTEGER,
     id_usuario: DataTypes.INTEGER,
-    nome: DataTypes.STRING,
-    telefone: DataTypes.STRING,
-    endereco: DataTypes.STRING,
-    numero: DataTypes.INTEGER,
-    bairro: DataTypes.STRING,
-    cidade: DataTypes.STRING,
-    id_estado: DataTypes.INTEGER,
-    cep: DataTypes.STRING,
-    cpf: DataTypes.STRING,
     ativo: DataTypes.BOOLEAN
   }, {
     sequelize,
-    modelName: 'Usuario_pcd',
+    modelName: 'Forum_resposta',
   });
-  return Usuario_pcd;
+  return Forum_resposta;
 };

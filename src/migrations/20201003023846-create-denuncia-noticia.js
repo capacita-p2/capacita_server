@@ -1,0 +1,38 @@
+'use strict';
+module.exports = {
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.createTable('Denuncia_noticias', {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: Sequelize.INTEGER
+      },
+      id_denuncia: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Denuncias',
+          key: 'id'
+        }
+      },
+      id_noticia: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Noticias',
+          key: 'id'
+        }
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      }
+    });
+  },
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.dropTable('Denuncia_noticias');
+  }
+};
