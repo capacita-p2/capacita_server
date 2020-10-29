@@ -1,11 +1,13 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const cors = require('cors')
 
 const app = express()
 
 //O APP VAI USAR O BODYPARSER PARA INTERPRETAR PARÂMETROS DE ROTA E REQUISÇÃO
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json()) //PARA TRABALHAR O CONTEÚDO EM FORMATO JSON
+app.use(cors()) //EVITA ERRO DE REFERÊNCIA CRUZADA UTILIZANDO PERSISTÊNCIA LOCAL
 
 const routes = require('./src/routes/usuarioRoutes.js')
 routes(app)

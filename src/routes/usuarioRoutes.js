@@ -1,7 +1,7 @@
 module.exports = function (app) {
-    const usuarios = require('../controller/usuarioController.js')
-    app.route('/usuarios')
-        .get(usuarios.listAll)
-        .post(usuarios.createOne)
+    const usuario = require('../controller/usuarioController.js')
+    app.route('/usuario')
+        .get(usuario.listAll)
+        .post(usuario.createOne)
 
 }
