@@ -9,8 +9,11 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json()) //PARA TRABALHAR O CONTEÚDO EM FORMATO JSON
 app.use(cors()) //EVITA ERRO DE REFERÊNCIA CRUZADA UTILIZANDO PERSISTÊNCIA LOCAL
 
-const routes = require('./src/routes/usuarioRoutes.js')
-routes(app)
+const routesUsuario = require('./src/routes/usuarioRoutes.js')
+const routesUsuarioPcd = require('./src/routes/usuarioPcdRoutes.js')
+
+routesUsuario(app)
+routesUsuarioPcd(app)
 
 app.route('/')
     .get((req, res) => {
