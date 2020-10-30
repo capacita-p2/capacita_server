@@ -11,9 +11,11 @@ app.use(cors()) //EVITA ERRO DE REFERÊNCIA CRUZADA UTILIZANDO PERSISTÊNCIA LOC
 
 const routesUsuario = require('./src/routes/usuarioRoutes.js')
 const routesUsuarioPcd = require('./src/routes/usuarioPcdRoutes.js')
+const routesInstituicao = require('./src/routes/instituicaoRoutes.js')
 
 routesUsuario(app)
 routesUsuarioPcd(app)
+routesInstituicao(app)
 
 app.route('/')
     .get((req, res) => {
