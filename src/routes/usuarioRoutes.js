@@ -3,5 +3,8 @@ module.exports = function (app) {
     app.route('/usuario')
         .get(usuario.listAll)
         .post(usuario.createOne)
+    app.route('/usuario-login')
+        .post(usuario.findOne)
+    
 
 }

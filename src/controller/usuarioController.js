@@ -1,4 +1,6 @@
 const Usuario = require('../models/').Usuario
+const UsuarioPcd = require('../models/').Usuario_pcd
+const Instituicao = require('../models/').Instituicao
 
 exports.listAll = (req, res) => {
     Usuario.findAll().then(usuarios => {
@@ -15,4 +17,50 @@ exports.createOne = (req, res) => {
     }).catch(err => {
         res.send(err)
     })
+}
+
+exports.findOne = (req, res) => {
+    const {email, senha} = req.body
+
+    let response = {
+        message: '',
+    }
+
+
+    Usuario.findOne({where: {email}}).then(usuario => {
+        if(usuario == null) {
+            response.message = "Usuário não localizado"
+            res.send(response)
+        } else {
+            if(senha == usuario.senha) {
+                response.usuario = usuario
+            } else {
+                response.message = "Senha Inválida"
+                res.send(response)
+            }
+            
+            //TIPO DE USUARIOS: 0=UsuarioPcd, 1=Instituicao, 2=Administrador
+            if(usuario.tipo == 2) {
+                response.message = "Usuário Administrador"
+                response.admin = null
+                res.send(response)
+            } else if (usuario.tipo == 1) {
+                Instituicao.findOne({where: {id_usuario: usuario.id}}).then(instituicao => {
+                    response.message = "Instituição Localizada"
+                    response.instituicao = instituicao
+                    response.usuario.senha = "***"
+                    res.send(response)
+                })
+            }
+            else {
+                UsuarioPcd.findOne({where: {id_usuario: usuario.id}}).then(usuarioPcd => {
+                    response.message = "UsuárioPcd Localizado"
+                    response.usuarioPcd = usuarioPcd
+                    response.usuario.senha = "***"
+                    res.send(response)
+                })
+            }
+        }
+    })
+    
 }
