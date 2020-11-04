@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Estado.init({
-    estado: DataTypes.STRING
+    label: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Estado',
