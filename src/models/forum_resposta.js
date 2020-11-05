@@ -2,7 +2,6 @@
 const {
   Model
 } = require('sequelize');
-const forum_topico = require('./forum_topico');
 module.exports = (sequelize, DataTypes) => {
   class Forum_resposta extends Model {
     /**

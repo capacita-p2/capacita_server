@@ -2,7 +2,6 @@
 const {
   Model
 } = require('sequelize');
-const forum_resposta = require('./forum_resposta');
 module.exports = (sequelize, DataTypes) => {
   class Forum_topico extends Model {
     /**
@@ -12,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Forum_topico.hasOne(models.Usuario)
-      Forum_topico.hasMany(models.forum_resposta)
+      Forum_topico.hasMany(models.Forum_resposta)
     }
   };
   Forum_topico.init({
