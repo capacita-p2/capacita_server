@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Forum_resposta.belongsTo(models.Forum_topico)
-      Forum_resposta.hasOne(models.Usuario)
+      // Forum_resposta.belongsTo(models.Forum_topico)
+      // Forum_resposta.hasOne(models.Usuario)
     }
   };
   Forum_resposta.init({

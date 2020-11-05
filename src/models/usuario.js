@@ -10,10 +10,10 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Usuario.hasOne(models.Usuario_pcd)
-      Usuario.hasOne(models.Instituicao)
-      Usuario.belongsTo(models.Forum_topico)
-      Usuario.belongsTo(models.Forum_resposta)
+      // Usuario.belongsTo(models.Usuario_pcd)
+      // Usuario.belongsTo(models.Instituicao)
+      // Usuario.belongsTo(models.Forum_topico)
+      // Usuario.belongsTo(models.Forum_resposta)
     }
   };
   Usuario.init({
