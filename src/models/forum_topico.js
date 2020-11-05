@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const forum_resposta = require('./forum_resposta');
 module.exports = (sequelize, DataTypes) => {
   class Forum_topico extends Model {
     /**
@@ -10,7 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Forum_topico.hasOne(models.Usuario)
+      Forum_topico.hasMany(models.forum_resposta)
     }
   };
   Forum_topico.init({
