@@ -15,12 +15,12 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        nome: 'Mental',
+        nome: 'Intelectual',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        nome: 'Múltiplas',
+        nome: 'Mudez',
         createdAt: new Date(),
         updatedAt: new Date()
       },

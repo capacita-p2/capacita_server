@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // Estado.hasOne(models.Usuario_pcd)
+      // Estado.belongsTo(models.Usuario_pcd)
       // Estado.hasOne(models.Instituicao)
     }
   };
