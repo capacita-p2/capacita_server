@@ -5,137 +5,137 @@ module.exports = {
 
      await queryInterface.bulkInsert('Estados', [
        {
-        estado: 'AC',
+        label: 'AC - Acre',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'AL',
+        label: 'AL - Alagoas',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'AP',
+        label: 'AP - Amapá',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'AM',
+        label: 'AM - Amazonas',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'BA',
+        label: 'BA - Bahia',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'CE',
+        label: 'CE - Ceará',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'DF',
+        label: 'DF - Distrito Federal',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'ES',
+        label: 'ES - Espirito Santo',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'GO',
+        label: 'GO - Goais',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'MA',
+        label: 'MA - Maranhão',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'MT',
+        label: 'MT - Mato Grosso',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'MS',
+        label: 'MS - Mato Grosso do Sul',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'MG',
+        label: 'MG - Mina Gerais',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'PA',
+        label: 'PA - Pará',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'PB',
+        label: 'PB - Paraíba',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'PR',
+        label: 'PR Paraná',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'PE',
+        label: 'PE - Pernambuco',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'PI',
+        label: 'PI - Piauí',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'RJ',
+        label: 'RJ - Rio de Jandeiro',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'RN',
+        label: 'RN - Rio Grande do Norte',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'RS',
+        label: 'RS - Rio Grande do Sul',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'RO',
+        label: 'RO - Rondônia',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'RR',
+        label: 'RR - Roraima',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'SC',
+        label: 'SC - Santa Caterina',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'SP',
+        label: 'SP - São Paulo',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'SE',
+        label: 'SE - Sergipe',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        estado: 'TO',
+        label: 'TO - Tocantins',
         createdAt: new Date(),
         updatedAt: new Date()
       },
