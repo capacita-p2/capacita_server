@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Usuario_tipo_deficiencia.init({
-    id_usuario_pcd: DataTypes.INTEGER,
-    id_tipo_deficiencia: DataTypes.INTEGER
+    id_usuario_pcd: { primaryKey: true, type: DataTypes.INTEGER },
+    id_tipo_deficiencia: { primaryKey: true, type: DataTypes.INTEGER }
   }, {
     sequelize,
     modelName: 'Usuario_tipo_deficiencia',

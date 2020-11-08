@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Denuncia_noticia.init({
-    id_denuncia: DataTypes.INTEGER,
-    id_noticia: DataTypes.INTEGER
+    id_denuncia: { primaryKey: true, type: DataTypes.INTEGER },
+    id_noticia: { primaryKey: true, type: DataTypes.INTEGER }
   }, {
     sequelize,
     modelName: 'Denuncia_noticia',
