@@ -35,10 +35,10 @@ exports.createOne = async (req, res) => {
                 res.send(err)
             })
             usuario.usuarioPcd = usuarioPcd
+            res.send(usuarioPcd)
         }).catch(err => {
             res.send(err)
         })
-        res.send(usuario)
     }).catch(err => {
         res.send(err)
     })

@@ -16,8 +16,7 @@ exports.createOne = (req, res) => {
         id_usuario = usuario.id
         Instituicao.create({nome, telefone, endereco, numero, bairro, cidade, id_estado, id_usuario, cep, cnpj, ativo})
         .then (instituicao => {
-            res.send(usuario.Usuario)
-            res.send(usuario.Instituicao)
+            res.send(instituicao)
         }).catch(err => {
             res.send(err)
         })
