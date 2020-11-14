@@ -1,7 +1,8 @@
 const Curso = require('../models').Curso
 
 exports.listAll = (req, res) => {
-    Curso.findAll ().then(cursos => {
+    Curso.findAll ({order: [['id', 'DESC']]})
+    .then(cursos => {
         res.send(cursos)
     }).catch(err => {
         res.send(err)
