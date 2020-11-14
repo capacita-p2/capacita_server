@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // Curso.belongsTo(models.Instituicao)
+      // Curso.belongsTo(models.Instituicao, {foreignKey: 'id_instituicao', as: 'instituicaoId'})
       // Curso.belongsToMany(models.Usuario_pcd, { through: models.Inscricao })
       // Curso.belongsToMany(models.Tipo_deficiencia, { through: models.Curso_tipo_deficiencia })
       // Curso.hasMany(models.Avaliacao)
@@ -24,7 +24,10 @@ module.exports = (sequelize, DataTypes) => {
     carga_horaria: DataTypes.STRING,
     horario: DataTypes.STRING,
     valor: DataTypes.STRING,
-    ativo: DataTypes.BOOLEAN
+    ativo: DataTypes.BOOLEAN,
+    resumo: DataTypes.STRING,
+    descricao: DataTypes.STRING,
+    url_img: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Curso',

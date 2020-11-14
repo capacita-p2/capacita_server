@@ -15,6 +15,7 @@ const routesUsuarioPcd          = require('./src/routes/usuarioPcdRoutes.js')
 const routesInstituicao         = require('./src/routes/instituicaoRoutes.js')
 const routesEstados             = require('./src/routes/estadosRoutes.js')
 const routesUsuarioDeficiencia  = require('./src/routes/usuarioDeficienciaRoutes.js')
+const routesCurso               = require('./src/routes/cursoRoutes.js')
 
 //REPASSE DE INSTÂNCIA DO EXPRESS PARA AS ROTAS
 routesUsuario(app)
@@ -22,6 +23,7 @@ routesUsuarioPcd(app)
 routesInstituicao(app)
 routesEstados(app)
 routesUsuarioDeficiencia(app)
+routesCurso(app)
 
 //ROTA RAIZ
 app.route('/')
