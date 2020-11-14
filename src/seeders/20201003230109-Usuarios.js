@@ -11,6 +11,38 @@ module.exports = {
         ativo: true,
         createdAt: new Date(),
         updatedAt: new Date()
+      },
+      {
+        email: 'joao@hotmail.com',
+        senha: '1234',
+        tipo: '0',
+        ativo: true,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        email: 'maria@hotmail.com',
+        senha: '123',
+        tipo: '0',
+        ativo: true,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        email: 'ernandes@hotmail.com',
+        senha: '123',
+        tipo: '0',
+        ativo: true,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        email: 'ultra@cursos.com',
+        senha: '123',
+        tipo: '2',
+        ativo: true,
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
     ], {});
     

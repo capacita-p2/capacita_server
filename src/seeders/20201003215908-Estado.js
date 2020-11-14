@@ -80,7 +80,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        label: 'PR Paraná',
+        label: 'PR - Paraná',
         createdAt: new Date(),
         updatedAt: new Date()
       },
