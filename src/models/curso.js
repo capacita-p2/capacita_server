@@ -13,7 +13,9 @@ module.exports = (sequelize, DataTypes) => {
       // Curso.belongsTo(models.Instituicao, {foreignKey: 'id_instituicao', as: 'instituicaoId'})
       // Curso.belongsToMany(models.Usuario_pcd, { through: models.Inscricao })
       // Curso.belongsToMany(models.Tipo_deficiencia, { through: models.Curso_tipo_deficiencia })
-      // Curso.hasMany(models.Avaliacao)
+      Curso.belongsTo(models.Instituicao, {
+        foreignKey: 'id_instituicao'
+      })
     }
   };
   Curso.init({

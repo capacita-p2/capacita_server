@@ -13,7 +13,9 @@ module.exports = (sequelize, DataTypes) => {
       // Instituicao.hasOne(models.Usuario)
       // Instituicao.hasMany(models.Noticia)
       // Instituicao.belongsTo(models.Estado)
-      // Instituicao.hasMany(models.Curso)
+      Instituicao.hasMany(models.Curso, {
+        foreignKey: 'id_instituicao'
+      })
     }
   };
   Instituicao.init({

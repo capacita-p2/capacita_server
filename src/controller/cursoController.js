@@ -1,8 +1,8 @@
 const Curso = require('../models').Curso
+const Instituicao = require('../models').Instituicao
 
 exports.listAll = (req, res) => {
-    Curso.findAll ({order: [['id', 'DESC']]})
-    .then(cursos => {
+    Curso.findAll ({include: Instituicao}).then(cursos => {
         res.send(cursos)
     }).catch(err => {
         res.send(err)
