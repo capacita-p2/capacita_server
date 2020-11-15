@@ -14,7 +14,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         primaryKey: true,
         references: {
-          model: 'tipo_deficiencias',
+          model: 'tipo_deficiencia',
           key: 'id',
           unique: true
         }

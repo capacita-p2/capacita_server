@@ -1,8 +1,16 @@
 const Curso = require('../models').Curso
 const Instituicao = require('../models').Instituicao
+const Deficiencia = require('../models').Tipo_deficiencia
 
 exports.listAll = (req, res) => {
-    Curso.findAll ({include: Instituicao}).then(cursos => {
+    Curso.findAll ({include: [
+        {
+            model: Instituicao
+        },
+        {
+            model: Deficiencia
+        }
+    ]}).then(cursos => {
         res.send(cursos)
     }).catch(err => {
         res.send(err)
