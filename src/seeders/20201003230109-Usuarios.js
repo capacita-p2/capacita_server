@@ -43,6 +43,14 @@ module.exports = {
         ativo: true,
         createdAt: new Date(),
         updatedAt: new Date()
+      },
+      {
+        email: 'curso@livres.com',
+        senha: '123',
+        tipo: '2',
+        ativo: true,
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
     ], {});
     
