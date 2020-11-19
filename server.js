@@ -8,6 +8,7 @@ const app = express()
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json()) //PARA TRABALHAR O CONTEÚDO EM FORMATO JSON
 app.use(cors()) //EVITA ERRO DE REFERÊNCIA CRUZADA UTILIZANDO PERSISTÊNCIA LOCAL
+app.use(express.static('public')) // ATIVA COMPARTILHAMENTO DE ARQUIVOS ESTÁTICOS NA PASTA PUBLIC
 
 //IMPORTAÇÃO DOS ARQUIVOS DE ROTAS
 const routesUsuario             = require('./src/routes/usuarioRoutes.js')
