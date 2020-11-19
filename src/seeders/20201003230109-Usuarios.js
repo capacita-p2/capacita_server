@@ -14,7 +14,7 @@ module.exports = {
       },
       {
         email: 'joao@hotmail.com',
-        senha: '1234',
+        senha: '123',
         tipo: '0',
         ativo: true,
         createdAt: new Date(),

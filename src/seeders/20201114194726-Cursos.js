@@ -13,7 +13,7 @@ module.exports = {
       ativo: true,
       resumo: 'Curso de Braile com foco de aprendizagem contínua.',
       descricao: '',
-      url_img: '../img/banner_2.png',
+      url_img: 'curso_2.png',
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -28,7 +28,7 @@ module.exports = {
       ativo: true,
       resumo: 'Curso de Administração voltado para área empreserial com diploma reconhecido pelo mec',
       descricao: '',
-      url_img: '../img/banner_3.png',
+      url_img: 'curso_3.png',
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -43,7 +43,7 @@ module.exports = {
       ativo: true,
       resumo: 'Curso de informática básica com módulos office word, excel, access e internet.',
       descricao: '',
-      url_img: '../img/banner_1.png',
+      url_img: 'curso_1.png',
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -58,7 +58,7 @@ module.exports = {
       ativo: true,
       resumo: 'Curso de Braile com foco de aprendizagem contínua.',
       descricao: '',
-      url_img: '../img/banner_2.png',
+      url_img: 'curso_2.png',
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -73,7 +73,7 @@ module.exports = {
       ativo: true,
       resumo: 'Curso de Administração voltado para área empreserial com diploma reconhecido pelo mec',
       descricao: '',
-      url_img: '../img/banner_3.png',
+      url_img: 'curso_3.png',
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -88,7 +88,7 @@ module.exports = {
       ativo: true,
       resumo: 'Curso de informática básica com módulos office word, excel, access e internet.',
       descricao: '',
-      url_img: '../img/banner_1.png',
+      url_img: 'curso_1.png',
       createdAt: new Date(),
       updatedAt: new Date()
     }], {});
