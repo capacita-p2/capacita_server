@@ -29,6 +29,8 @@ module.exports = (sequelize, DataTypes) => {
     id_estado: DataTypes.INTEGER,
     cep: DataTypes.STRING,
     cnpj: DataTypes.STRING,
+    descricao: DataTypes.TEXT,
+    url_img: DataTypes.STRING,
     ativo: DataTypes.BOOLEAN
   }, {
     sequelize,
