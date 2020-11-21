@@ -12,7 +12,7 @@ npm install
 npx sequelize db:migrate
 ```
 
-### 3. Run Sequelize Seeders for genarete default data
+### 3. Run Sequelize Seeds for generate default data
 ```bash
 npx sequelize db:seed:all
 ```
