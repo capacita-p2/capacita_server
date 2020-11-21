@@ -12,7 +12,7 @@ module.exports = {
       valor: 'R$ 0,00',
       ativo: true,
       resumo: 'Curso de Braile com foco de aprendizagem contínua.',
-      descricao: '',
+      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed ligula ut augue malesuada suscipit. Integer enim ligula, varius tristique tincidunt in, sagittis in sapien. Cras eu arcu pretium, pellentesque ante vitae, fringilla ligula. Morbi magna ex, luctus quis tincidunt sit amet, gravida at mauris. Pellentesque eget risus eu quam consectetur feugiat at et nisi. Nam tortor tellus, accumsan eget faucibus a, fringilla id nisi. Fusce feugiat magna nibh, et laoreet sapien vehicula vulputate.      Fusce rhoncus maximus ligula, et vulputate sapien ullamcorper sit amet. Phasellus egestas rutrum augue, in blandit diam gravida sed. Aliquam eget est quis nunc scelerisque pharetra. Etiam erat tellus, venenatis a elit ut, finibus dapibus lectus. Vestibulum eget rutrum turpis. Duis turpis enim, lobortis dictum tristique vitae, tempor a justo. Aliquam elementum odio ac justo maximus, nec consectetur nibh rutrum. Nam vitae purus at nisl tempus facilisis. ',
       url_img: 'curso_2.png',
       createdAt: new Date(),
       updatedAt: new Date()
@@ -27,7 +27,7 @@ module.exports = {
       valor: 'R$ 300,00/Mês',
       ativo: true,
       resumo: 'Curso de Administração voltado para área empreserial com diploma reconhecido pelo mec',
-      descricao: '',
+      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed ligula ut augue malesuada suscipit. Integer enim ligula, varius tristique tincidunt in, sagittis in sapien. Cras eu arcu pretium, pellentesque ante vitae, fringilla ligula. Morbi magna ex, luctus quis tincidunt sit amet, gravida at mauris. Pellentesque eget risus eu quam consectetur feugiat at et nisi. Nam tortor tellus, accumsan eget faucibus a, fringilla id nisi. Fusce feugiat magna nibh, et laoreet sapien vehicula vulputate.      Fusce rhoncus maximus ligula, et vulputate sapien ullamcorper sit amet. Phasellus egestas rutrum augue, in blandit diam gravida sed. Aliquam eget est quis nunc scelerisque pharetra. Etiam erat tellus, venenatis a elit ut, finibus dapibus lectus. Vestibulum eget rutrum turpis. Duis turpis enim, lobortis dictum tristique vitae, tempor a justo. Aliquam elementum odio ac justo maximus, nec consectetur nibh rutrum. Nam vitae purus at nisl tempus facilisis. ',
       url_img: 'curso_3.png',
       createdAt: new Date(),
       updatedAt: new Date()
@@ -42,7 +42,7 @@ module.exports = {
       valor: 'R$ 0,00',
       ativo: true,
       resumo: 'Curso de informática básica com módulos office word, excel, access e internet.',
-      descricao: '',
+      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed ligula ut augue malesuada suscipit. Integer enim ligula, varius tristique tincidunt in, sagittis in sapien. Cras eu arcu pretium, pellentesque ante vitae, fringilla ligula. Morbi magna ex, luctus quis tincidunt sit amet, gravida at mauris. Pellentesque eget risus eu quam consectetur feugiat at et nisi. Nam tortor tellus, accumsan eget faucibus a, fringilla id nisi. Fusce feugiat magna nibh, et laoreet sapien vehicula vulputate.      Fusce rhoncus maximus ligula, et vulputate sapien ullamcorper sit amet. Phasellus egestas rutrum augue, in blandit diam gravida sed. Aliquam eget est quis nunc scelerisque pharetra. Etiam erat tellus, venenatis a elit ut, finibus dapibus lectus. Vestibulum eget rutrum turpis. Duis turpis enim, lobortis dictum tristique vitae, tempor a justo. Aliquam elementum odio ac justo maximus, nec consectetur nibh rutrum. Nam vitae purus at nisl tempus facilisis. ',
       url_img: 'curso_1.png',
       createdAt: new Date(),
       updatedAt: new Date()
@@ -57,7 +57,7 @@ module.exports = {
       valor: 'R$ 0,00',
       ativo: true,
       resumo: 'Curso de Braile com foco de aprendizagem contínua.',
-      descricao: '',
+      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed ligula ut augue malesuada suscipit. Integer enim ligula, varius tristique tincidunt in, sagittis in sapien. Cras eu arcu pretium, pellentesque ante vitae, fringilla ligula. Morbi magna ex, luctus quis tincidunt sit amet, gravida at mauris. Pellentesque eget risus eu quam consectetur feugiat at et nisi. Nam tortor tellus, accumsan eget faucibus a, fringilla id nisi. Fusce feugiat magna nibh, et laoreet sapien vehicula vulputate.      Fusce rhoncus maximus ligula, et vulputate sapien ullamcorper sit amet. Phasellus egestas rutrum augue, in blandit diam gravida sed. Aliquam eget est quis nunc scelerisque pharetra. Etiam erat tellus, venenatis a elit ut, finibus dapibus lectus. Vestibulum eget rutrum turpis. Duis turpis enim, lobortis dictum tristique vitae, tempor a justo. Aliquam elementum odio ac justo maximus, nec consectetur nibh rutrum. Nam vitae purus at nisl tempus facilisis. ',
       url_img: 'curso_2.png',
       createdAt: new Date(),
       updatedAt: new Date()
@@ -72,7 +72,7 @@ module.exports = {
       valor: 'R$ 300,00/Mês',
       ativo: true,
       resumo: 'Curso de Administração voltado para área empreserial com diploma reconhecido pelo mec',
-      descricao: '',
+      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed ligula ut augue malesuada suscipit. Integer enim ligula, varius tristique tincidunt in, sagittis in sapien. Cras eu arcu pretium, pellentesque ante vitae, fringilla ligula. Morbi magna ex, luctus quis tincidunt sit amet, gravida at mauris. Pellentesque eget risus eu quam consectetur feugiat at et nisi. Nam tortor tellus, accumsan eget faucibus a, fringilla id nisi. Fusce feugiat magna nibh, et laoreet sapien vehicula vulputate.      Fusce rhoncus maximus ligula, et vulputate sapien ullamcorper sit amet. Phasellus egestas rutrum augue, in blandit diam gravida sed. Aliquam eget est quis nunc scelerisque pharetra. Etiam erat tellus, venenatis a elit ut, finibus dapibus lectus. Vestibulum eget rutrum turpis. Duis turpis enim, lobortis dictum tristique vitae, tempor a justo. Aliquam elementum odio ac justo maximus, nec consectetur nibh rutrum. Nam vitae purus at nisl tempus facilisis. ',
       url_img: 'curso_3.png',
       createdAt: new Date(),
       updatedAt: new Date()
@@ -87,7 +87,7 @@ module.exports = {
       valor: 'R$ 0,00',
       ativo: true,
       resumo: 'Curso de informática básica com módulos office word, excel, access e internet.',
-      descricao: '',
+      descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed ligula ut augue malesuada suscipit. Integer enim ligula, varius tristique tincidunt in, sagittis in sapien. Cras eu arcu pretium, pellentesque ante vitae, fringilla ligula. Morbi magna ex, luctus quis tincidunt sit amet, gravida at mauris. Pellentesque eget risus eu quam consectetur feugiat at et nisi. Nam tortor tellus, accumsan eget faucibus a, fringilla id nisi. Fusce feugiat magna nibh, et laoreet sapien vehicula vulputate.      Fusce rhoncus maximus ligula, et vulputate sapien ullamcorper sit amet. Phasellus egestas rutrum augue, in blandit diam gravida sed. Aliquam eget est quis nunc scelerisque pharetra. Etiam erat tellus, venenatis a elit ut, finibus dapibus lectus. Vestibulum eget rutrum turpis. Duis turpis enim, lobortis dictum tristique vitae, tempor a justo. Aliquam elementum odio ac justo maximus, nec consectetur nibh rutrum. Nam vitae purus at nisl tempus facilisis. ',
       url_img: 'curso_1.png',
       createdAt: new Date(),
       updatedAt: new Date()
