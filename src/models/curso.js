@@ -18,6 +18,10 @@ module.exports = (sequelize, DataTypes) => {
       Curso.belongsTo(models.Instituicao, {
         foreignKey: 'id_instituicao'
       })
+      Curso.belongsToMany(models.Usuario_pcd, {
+        through:models.Inscricao,
+        foreignKey: 'id_curso'
+      })
     }
   };
   Curso.init({

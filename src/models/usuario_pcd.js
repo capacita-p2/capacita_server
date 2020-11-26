@@ -15,6 +15,10 @@ module.exports = (sequelize, DataTypes) => {
       // Usuario_pcd.belongsToMany(models.Curso, { through: models.Inscricao })
       // Usuario_pcd.belongsToMany(models.Tipo_deficiencia, { through: models.Usuario_tipo_deficiencia })
       // Usuario_pcd.hasMany(models.Avaliacao)
+      Usuario_pcd.belongsToMany(models.Curso, {
+        through: models.Inscricao,
+        foreignKey: 'id_usuario_pcd'
+      })
     }
   };
   Usuario_pcd.init({

@@ -18,6 +18,7 @@ const routesEstados             = require('./src/routes/estadosRoutes.js')
 const routesUsuarioDeficiencia  = require('./src/routes/usuarioDeficienciaRoutes.js')
 const routesCurso               = require('./src/routes/cursoRoutes.js')
 const routesDeficiencia         = require('./src/routes/deficienciaRoutes.js')
+const routesInscricao           = require('./src/routes/inscricaoRoutes.js')
 
 //REPASSE DE INSTÂNCIA DO EXPRESS PARA AS ROTAS
 routesUsuario(app)
@@ -27,6 +28,7 @@ routesEstados(app)
 routesUsuarioDeficiencia(app)
 routesCurso(app)
 routesDeficiencia(app)
+routesInscricao(app)
 
 //ROTA RAIZ
 app.route('/')
