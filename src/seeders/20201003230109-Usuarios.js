@@ -7,7 +7,7 @@ module.exports = {
       {
         email: 'admin_geral@capacita.com.br',
         senha: '12345678910',
-        tipo: '3',
+        tipo: '2',
         ativo: true,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -39,7 +39,7 @@ module.exports = {
       {
         email: 'ultra@cursos.com',
         senha: '123',
-        tipo: '2',
+        tipo: '1',
         ativo: true,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -47,7 +47,7 @@ module.exports = {
       {
         email: 'curso@livres.com',
         senha: '123',
-        tipo: '2',
+        tipo: '1',
         ativo: true,
         createdAt: new Date(),
         updatedAt: new Date()
