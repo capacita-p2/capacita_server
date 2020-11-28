@@ -4,7 +4,7 @@ const UsuarioPcd = require('../models/').Usuario_pcd
 
 exports.listAll = (req, res) => {
     Inscricao.findAll().then (response => {
-        res.send(response)
+        res.send(response.data)
     }).catch (err => {
         res.send(err)
     })
@@ -26,6 +26,7 @@ exports.listCursoInscritos = (req, res) => {
 
 exports.listInscritoCursos= (req, res) => {
     const {id_usuario_pcd} = req.body
+    
     UsuarioPcd.findOne({
         where: id_usuario_pcd, 
         include: {
@@ -40,7 +41,13 @@ exports.listInscritoCursos= (req, res) => {
 
 exports.createOne = (req, res) => {
     const {id_usuario_pcd, id_curso} = req.body
-    Inscricao.create({id_usuario_pcd, id_curso}).then(response => {
+    let response = {
+        message: ''
+    }
+
+    Inscricao.create({id_usuario_pcd, id_curso}).then(inscricao => {
+        response.message = 'Inscrição efetuada com sucesso!'
+        response.Inscricao = inscricao.data
         res.send(response)
     }).catch(err => {
         res.send(err)
