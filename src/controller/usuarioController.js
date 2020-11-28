@@ -20,6 +20,33 @@ exports.createOne = (req, res) => {
 }
 
 exports.findOne = (req, res) => {
+    const {id} = req.body
+
+    let response = {
+        message: ''
+    }
+
+    Usuario.findOne({
+        where: {id},
+        include: [
+            {model: UsuarioPcd},
+            {model: Instituicao}
+        ]
+    }).then(usuario => {
+        if(usuario == null) {
+            response.message = 'Usuário não localizado'
+        } else {
+            response.message = 'Usuário localizado!'
+            response.Usuario = usuario
+        }
+        res.send(response)
+    }).catch (err => {
+        res.send(err)
+    }) 
+
+}
+
+exports.login = (req, res) => {
     const {email, senha} = req.body
 
     let response = {
