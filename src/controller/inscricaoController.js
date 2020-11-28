@@ -10,6 +10,20 @@ exports.listAll = (req, res) => {
     })
 }
 
+exports.verificarInscricao = (req, res) => {
+    const {id_usuario_pcd, id_curso} = req.body
+    Inscricao.findOne({
+        where: {
+            id_usuario_pcd,
+            id_curso    
+        }
+    }).then(response => {
+        res.send(response)
+    }).catch(err => {
+        res.send(err)
+    })
+}
+
 exports.listCursoInscritos = (req, res) => {
     const {id_curso} = req.body
     Curso.findOne({

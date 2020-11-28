@@ -7,4 +7,6 @@ module.exports = function(app) {
         .post(inscricao.listCursoInscritos)
     app.route('/inscrito_cursos')
         .post(inscricao.listInscritoCursos)
+    app.route('/verificar_inscricao')
+        .post(inscricao.verificarInscricao)
 }
