@@ -10,6 +10,19 @@ exports.bulkCreate = (req, res) => {
     })
 }
 
+exports.findAllUsuarioDeficiencias = (req, res) => {
+    const {id_usuario_pcd} = req.body
+    UsuarioDeficiencia.findAll({
+        where: {
+            id_usuario_pcd
+        }
+    }).then(response => {
+        res.send(response)
+    }).catch(err => {
+        res.send(err)
+    })
+}
+
 exports.findAll = (req, res) => {
     const {id_usuario_pcd} = req.body
     

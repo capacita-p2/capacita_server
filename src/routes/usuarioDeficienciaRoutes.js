@@ -4,5 +4,7 @@ module.exports = function (app) {
         .post(usuarioDeficienciaController.findAll)
     app.route('/usuarioDeficienciaCreate')
         .post(usuarioDeficienciaController.bulkCreate)
+    app.route('/buscar-usuario-deficiencia')
+        .post(usuarioDeficienciaController.findAllUsuarioDeficiencias)
     
 }
