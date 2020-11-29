@@ -1,10 +1,23 @@
 const UsuarioPcd = require('../models').Usuario_pcd
 const Usuario = require('../models').Usuario
+const TipoDeficiencia = require('../models').Tipo_deficiencia
 const UsuarioDeficiencia = require('../models').Usuario_tipo_deficiencia
 
 exports.listAll = (req, res) => {
     UsuarioPcd.findAll ().then(usuariosPcd => {
         res.send(usuariosPcd) 
+    }).catch(err => {
+        res.send(err)
+    })
+}
+
+exports.findOne = (req, res) => {
+    const {id} = req.body
+    UsuarioPcd.findOne({
+        where: {id},
+        include: TipoDeficiencia
+    }).then(usuario => {
+        res.send(usuario)
     }).catch(err => {
         res.send(err)
     })

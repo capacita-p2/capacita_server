@@ -12,13 +12,53 @@ exports.listAll = (req, res) => {
 
 exports.verificarInscricao = (req, res) => {
     const {id_usuario_pcd, id_curso} = req.body
+    let usuarioPcdDb = null
+    let cursoDb = null
+
+    let response = {
+        message: ''
+    }
+
+    // BUSCAR USUÁRIO PCD DO BANCO
+    UsuarioPcd.findOne({
+        where: {
+            id_usuario_pcd
+        }
+    }).then(usuario => {
+        usuarioPcdDb = usuario
+    }).catch(err => {
+        res.send(err)
+    })
+
+    //BUSCAR CURSO DO BANCO
+    Curso.findOne({
+        where: {
+            id_curso
+        }
+    }).then(curso => {
+        cursoDb = curso
+    }).catch(err => {
+        res.send(err)
+    })
+
+    // VERIFICAR SE INSCRIÇÃO JÁ EXISTE
     Inscricao.findOne({
         where: {
             id_usuario_pcd,
             id_curso    
         }
-    }).then(response => {
-        res.send(response)
+    }).then(inscricao => {
+        if(inscricao == null) {
+            response.message = 'Não existe inscrição...'
+            res.send(response)
+        } else if (cursoDb.id_deficiencia != usuarioPcdDb.id_deficiencia) {
+            response.message = 'Deficiência não corresponde ao curso'
+            res.send(response)
+        } else {
+            response.message = 'Inscrição Localizada'
+            response.Inscricao = inscricao
+            res.send(response)
+        }
     }).catch(err => {
         res.send(err)
     })

@@ -3,4 +3,6 @@ module.exports = function (app) {
     app.route('/usuarioPcd')
         .get(usuarioPcd.listAll)
         .post(usuarioPcd.createOne)
+    app.route('/buscar-usuariopcd')
+        .post(usuarioPcd.findOne)
 }
