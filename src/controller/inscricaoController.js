@@ -3,6 +3,7 @@ const Curso      = require('../models').Curso
 const UsuarioPcd = require('../models/').Usuario_pcd
 const TipoDeficiencia = require('../models').Tipo_deficiencia
 const UsuarioTipoDeficiencia = require('../models').Usuario_tipo_deficiencia
+const { Op } = require('sequelize')
 
 exports.listAll = (req, res) => {
     Inscricao.findAll().then (response => {
@@ -12,10 +13,11 @@ exports.listAll = (req, res) => {
     })
 }
 
-exports.verificarInscricao = (req, res) => {
+exports.verificarInscricao = async (req, res) => {
     const {id_usuario_pcd, id_curso} = req.body
     let usuarioPcdDb = null
     let cursoDb = null
+    let usuarioTipoDeficiencia = null
 
     let response = {
         message: '',
@@ -23,7 +25,7 @@ exports.verificarInscricao = (req, res) => {
     }
 
     // BUSCAR USUÁRIO PCD DO BANCO
-    UsuarioPcd.findOne({
+    await UsuarioPcd.findOne({
         where: {
             id: id_usuario_pcd
         }
@@ -34,7 +36,7 @@ exports.verificarInscricao = (req, res) => {
     })
 
     //BUSCAR CURSO DO BANCO
-    Curso.findOne({
+    await Curso.findOne({
         where: {
             id: id_curso
         }
@@ -45,24 +47,40 @@ exports.verificarInscricao = (req, res) => {
     })
 
     // VERIFICAR SE INSCRIÇÃO JÁ EXISTE
-    Inscricao.findOne({
+    await Inscricao.findOne({
         where: {
             id_usuario_pcd,
             id_curso    
         }
-    }).then(inscricao => {
+    }).then(async inscricao => {
         if(inscricao == null) {
             response.message = 'Verificação: Usuário ainda não escrito no curso, liberado!'
             response.liberado = true
-            res.send(response)
         } else {
             response.message = 'Inscrição já realizada, não pode se inscrever novamente.'
-            response.Inscricao = inscricao
-            res.send(response)
+            response.liberado = false
         }
+        // CHECAGEM COMBINAÇÃO DEFICIÊNCIA E CURSO
+        await UsuarioTipoDeficiencia.findOne({
+            where: {
+                [Op.and]:[ 
+                    {id_usuario_pcd},
+                    {id_tipo_deficiencia: cursoDb.id_deficiencia} 
+                ]
+            }
+        }).then(usuarioDeficiencia => {
+            if(usuarioDeficiencia == null) {
+                usuarioTipoDeficiencia = usuarioDeficiencia
+                response.message = 'Sua deficiência não corresponde ao curso desejado.'
+                response.liberado = false
+            }
+        }).catch(err => {
+            res.send(err)
+        }) 
     }).catch(err => {
         res.send(err)
     })
+    res.send(response)
 }
 
 exports.listCursoInscritos = (req, res) => {
@@ -103,7 +121,7 @@ exports.createOne = async (req, res) => {
 
     let usuarioPcdDb = null
     let cursoDb = null
-    let UsuarioTipoDeficienciaDb = null
+    let usuarioTipoDeficienciaDb = null
 
     // BUSCAR USUÁRIO PCD DO BANCO
     await UsuarioPcd.findOne({
@@ -136,42 +154,36 @@ exports.createOne = async (req, res) => {
         if(inscricao == null) {
             response.message = 'Inscrição realizada com sucesso!'
             response.liberado = true
-            res.send(response)
         } else {
             response.message = 'Inscrição já realizada, não pode se inscrever novamente.'
             response.Inscricao = inscricao
-            res.send(response)
         }
     }).catch(err => {
         res.send(err)
     })
 
-    // //BUSCAR USUARIO TIPOS DE DEFICIÊNCIA
-    // await UsuarioTipoDeficiencia.findAll({
-    //     where: {
-    //         id_usuario_pcd
-    //     }
-    // }).then(usuarioDeficiencia => {
-    //     usuarioTipoDeficienciaDb = usuarioDeficiencia
-    // }).catch(err => {
-    //     res.send(err)
-    // })
-
-    // // CHECAGEM COMBINAÇÃO DEFICIÊNCIA E CURSO
-    // console.log('>>>>>>>>>>>>> ' + usuarioTipoDeficienciaDb)
-    // for(var deficiencia in usuarioTipoDeficienciaDb) {
-    //     console.log('______________ ' + deficiencia.id_usuario_pcd)
-    //     if(deficiencia.id_tipo_deficiencia == cursoDb.id_deficiencia) {
-    //         response.liberado = true
-    //     } else {
-    //         response.message = "O Curso não está habilitado para sua deficiẽncia."
-    //     }
-    // }
+    // CHECAGEM COMBINAÇÃO DEFICIÊNCIA E CURSO
+    await UsuarioTipoDeficiencia.findOne({
+        where: {
+            [Op.and]:[ 
+                {id_usuario_pcd},
+                {id_tipo_deficiencia: cursoDb.id_deficiencia} 
+            ]
+        }
+    }).then(usuarioDeficiencia => {
+        if(usuarioDeficiencia == null) {
+            usuarioTipoDeficienciaDb = usuarioDeficiencia
+            response.message = 'Sua deficiência não corresponde ao curso desejado.'
+            response.liberado = false
+        }
+    }).catch(err => {
+        res.send(err)
+    }) 
 
     if(response.liberado) {
         await Inscricao.create({id_usuario_pcd, id_curso}).then(inscricao => {
-            response.message = 'Inscrição efetuada com sucesso!'
-            response.Inscricao = inscricao.data
+            response.message = 'Inscrição realizada com sucesso!'
+            response.Inscricao = inscricao
             res.send(response)
         }).catch(err => {
             res.send(err)
