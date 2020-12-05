@@ -25,35 +25,61 @@ exports.findOne = (req, res) => {
 
 exports.createOne = async (req, res) => {
     let {nome, telefone, endereco, numero, bairro, cidade, id_estado, id_usuario, cep, cpf, ativo, email, senha, tipo, deficiencias} = req.body
-    Usuario.create({email, senha, ativo, tipo})
-    .then(async usuario => {
-        id_usuario = usuario.id
-        UsuarioPcd.create({nome, telefone, endereco, numero, bairro, cidade, id_estado, id_usuario, cep, cpf, ativo})
-        .then (async usuarioPcd => {
-            var tiposDeficiencias = []
+    let response = {
+        message: '',
+        liberado: false
+    }
 
-            for(deficiencia in deficiencias) {
-                var dado = {
-                    id_usuario_pcd: usuarioPcd.id,
-                    id_tipo_deficiencia: Number.parseInt(deficiencia)+1
-                }
-                tiposDeficiencias.push(dado)
-            }
+    Usuario.findOne({
+        where: {email}
+    }).then(async usuario => {
+        console.log(usuario)
+        if(usuario == null) {
+            console.log('Executando criação')
+            await Usuario.create({email, senha, ativo, tipo})
+            .then(async usuario => {
+                console.log(">>>>>>>>>>>>>")
+                id_usuario = usuario.id
+                await UsuarioPcd.create({nome, telefone, endereco, numero, bairro, cidade, id_estado, id_usuario, cep, cpf, ativo})
+                .then (async usuarioPcd => {
+                    var tiposDeficiencias = []
 
-            console.log(tiposDeficiencias)
+                    for(deficiencia in deficiencias) {
+                        var dado = {
+                            id_usuario_pcd: usuarioPcd.id,
+                            id_tipo_deficiencia: Number.parseInt(deficiencia)+1
+                        }
+                        tiposDeficiencias.push(dado)
+                    }
 
-            UsuarioDeficiencia.bulkCreate(tiposDeficiencias).then(usuarioDeficiencias => {
-                usuarioPcd.tiposDeficiencias = usuarioDeficiencias
+                    console.log(tiposDeficiencias)
+
+                    await UsuarioDeficiencia.bulkCreate(tiposDeficiencias).then(async usuarioDeficiencias => {
+                        usuarioPcd.tiposDeficiencias = usuarioDeficiencias
+                    }).catch(err => {
+                        res.send(err)
+                    })
+                    response.message = 'UsuárioPcd criado com sucesso!'
+                    response.liberado = true
+                    response.usuarioPcd = usuarioPcd
+                    console.log('UsuárioPcd criado com sucesso!')
+                }).catch(err => {
+                    res.send(err)
+                })
             }).catch(err => {
                 res.send(err)
             })
-            usuario.usuarioPcd = usuarioPcd
-            res.send(usuarioPcd)
-        }).catch(err => {
-            res.send(err)
-        })
-    }).catch(err => {
+        } else if (usuario.email == email) {
+            usuario.senha = "***"
+            response.message = 'E-mail já cadastrado'
+            response.usuarioPcd = usuario
+            console.log('E-mail já cadastrado...')
+        } else {
+            response.message = 'Erro no cadastro, verificar com Administrador'
+            console.log('Erro desconhecido...')
+        }
+        res.send(response)
+    }).catch (err => {
         res.send(err)
     })
-
 }
