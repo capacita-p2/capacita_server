@@ -22,16 +22,45 @@ exports.listAll = (req, res) => {
 
 exports.createOne = (req, res) => {
     let {nome, telefone, endereco, numero, bairro, cidade, id_estado, id_usuario, cep, cnpj, ativo, email, senha, tipo} = req.body
-    Usuario.create({email, senha, ativo, tipo})
-    .then(usuario => {
-        id_usuario = usuario.id
-        Instituicao.create({nome, telefone, endereco, numero, bairro, cidade, id_estado, id_usuario, cep, cnpj, ativo})
-        .then (instituicao => {
-            res.send(instituicao)
-        }).catch(err => {
-            res.send(err)
-        })
-    }).catch(err => {
+    let response = {
+        message: '',
+        liberado: false
+    }
+
+    Usuario.findOne({
+        where: {email}
+    }).then(async usuario => {
+        console.log(usuario)
+        if(usuario == null) {
+            console.log('Executando criação')
+            
+            await Usuario.create({email, senha, ativo, tipo})
+            .then(async usuario => {
+                id_usuario = usuario.id
+                await Instituicao.create({nome, telefone, endereco, numero, bairro, cidade, id_estado, id_usuario, cep, cnpj, ativo})
+                .then (instituicao => {
+                    response.message = "Cadastro Instituição gerado com sucesso!"
+                    response.liberado = true
+                    response.Instituicao = instituicao
+                    console.log('Instituição criada com sucesso!')
+                }).catch(err => {
+                    res.send(err)
+                })
+            }).catch(err => {
+                res.send(err)
+            })
+     
+        } else if (usuario.email == email.toLowerCase()) {
+            usuario.senha = "***"
+            response.message = 'E-mail já cadastrado'
+            response.Instituicao = usuario
+            console.log('E-mail já cadastrado...')
+        } else {
+            response.message = 'Erro no cadastro, verificar com Administrador'
+            console.log('Erro desconhecido...')
+        }
+        res.send(response)
+    }).catch (err => {
         res.send(err)
     })
 

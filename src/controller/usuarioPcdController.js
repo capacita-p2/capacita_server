@@ -29,7 +29,6 @@ exports.createOne = async (req, res) => {
         message: '',
         liberado: false
     }
-
     Usuario.findOne({
         where: {email}
     }).then(async usuario => {
@@ -38,7 +37,6 @@ exports.createOne = async (req, res) => {
             console.log('Executando criação')
             await Usuario.create({email, senha, ativo, tipo})
             .then(async usuario => {
-                console.log(">>>>>>>>>>>>>")
                 id_usuario = usuario.id
                 await UsuarioPcd.create({nome, telefone, endereco, numero, bairro, cidade, id_estado, id_usuario, cep, cpf, ativo})
                 .then (async usuarioPcd => {
@@ -69,7 +67,7 @@ exports.createOne = async (req, res) => {
             }).catch(err => {
                 res.send(err)
             })
-        } else if (usuario.email == email) {
+        } else if (usuario.email == email.toLowerCase()) {
             usuario.senha = "***"
             response.message = 'E-mail já cadastrado'
             response.usuarioPcd = usuario
