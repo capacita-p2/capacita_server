@@ -4,14 +4,16 @@ const Deficiencia = require('../models').Tipo_deficiencia
 const { Op } = require("sequelize");
 
 exports.listAll = (req, res) => {
-    Curso.findAll ({include: [
-        {
-            model: Instituicao
-        },
-        {
-            model: Deficiencia
-        }
-    ]}).then(cursos => {
+    Curso.findAll ({include: 
+        [
+            {
+                model: Instituicao
+            },
+            {
+                model: Deficiencia
+            }
+        ]
+}).then(cursos => {
         res.send(cursos)
     }).catch(err => {
         res.send(err)
@@ -21,11 +23,11 @@ exports.listAll = (req, res) => {
 exports.searchAll = (req, res) => {
     const {pesquisa} = req.body
 
-    Curso.findAll ({where: {
-        nome_curso: {[Op.substring]: pesquisa}
-    }},   
-    {include: 
-        [
+    Curso.findAll ({
+        where: {
+            nome_curso: {[Op.substring]: pesquisa}
+        }, 
+        include: [
             {
                 model: Instituicao
             },
