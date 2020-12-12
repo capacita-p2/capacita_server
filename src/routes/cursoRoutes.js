@@ -3,4 +3,6 @@ module.exports = function (app) {
     app.route('/curso')
         .get(curso.listAll)
         .post(curso.createOne)
+    app.route('/curso-pesquisa')
+        .post(curso.searchAll)
 }
