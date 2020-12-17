@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="CAPACITA - Cursos Inclusivos" src=../imagens/logo_capacita_branca.png" width="300px" />
+    <img src="https://i.ibb.co/bRKDwM1/Logo-capacita.png">
 </h1>
 
 <br/>
