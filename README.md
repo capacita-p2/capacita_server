@@ -15,18 +15,33 @@ Nossa missão é trazer para você os melhores cursos profissionalizantes. Atrav
 This project was developed with the following technologies:
 
 <ul>
-  <li><a href="https://sass-lang.com/">JavaScript</a></li>
+  <li><a href="/">Figma</a></li> Prototipação)
+  <li><a href="https://nodejs.org/en/">NodeJS</a></li>
+  <li><a href="www.microsoft.com/sqlserver/">MSSql Server</a></li>
+  <li><a href="https://sequelize.org/">Sequelize (ORM)</a></li>
+  <li><a href="https://quasar.dev/">Quasar/VueJS</a></li> 
   <li><a href="https://vuejs.org/">Vue.Js</a></li>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML5</a></li>
+  <li><a href="https://sass-lang.com/">JavaScript</a></li>
   <li><a href="https://facebook.github.io/jsx/">CSS3</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML5</a></li>
+ 
   
 ### :computer: Project
 
-Front-end, back-end do Projeto CAPACITA em desenvolvimento pela Equipe 27 GrowTech. 
-Alunos da FICR - Faculdade Católica Imaculada Conceição do Recife. 2020
+#### Problema:
+<p align="justify" style="color: #333">
+De acordo com o Censo 2010, 24% da população brasileira declarou algum grau de deficiência. Entretanto, apenas 1% dos portadores de deficiência estão incluídos no mercado formal de trabalho. Pesquisas indicam que um dos fatores para esta baixa inclusão está relacionada a baixa escolaridade e a baixa qualificação profissional.
+Identificamos que existem plataformas que facilitam a divulgação de vagas de empregos para deficientes físicos, mas são poucos as focadas em um dos fatores principais: qualificação profissional.
+
+#### Proposta:
+<p align="justify" style="color: #333">
+Nossa proposta é desenvolver um sistema para divulgação de cursos de qualificação profissional para deficientes físicos, de modo que eles possam ingressar no mercado de trabalho com alguma qualificação.
 <br/>
 
 ###  Contributors
+
+Front-end, back-end do Projeto CAPACITA em desenvolvimento pela Equipe 27 GrowTech. 
+Alunos da FICR - Faculdade Católica Imaculada Conceição do Recife. 2020
 
   <a href="https://github.com/josemilsonjunior">
         <img style="border-radius: 50px;" src="https://avatars0.githubusercontent.com/u/63685419?s=460&v=4" width="70px;" alt="Josemilson Francisco"/>
@@ -59,26 +74,28 @@ Alunos da FICR - Faculdade Católica Imaculada Conceição do Recife. 2020
       <p><scan title="Code">💻</scan>|<scan title="Documentation">🎨</scan></p>
     </td>
     <td align="center" style="border: none;">
-      
------------------------------------------------------------------------------------------------
 
-# CAPACITA - Cursos Inclusivos
+# Capacita Cursos Inclusivos (capacita)
 
-### 1. Install the dependencies
+## Install the dependencies
 ```bash
 npm install
 ```
-### 2. Generate a empty DataBase using MSSql-Server and Run Sequelize Migrations
+
+### Start the app in development mode (hot-code reloading, error reporting, etc.)
 ```bash
-npx sequelize db:migrate
+quasar dev
 ```
 
-### 3. Run Sequelize Seeds for generate default data
+### Lint the files
 ```bash
-npx sequelize db:seed:all
+yarn run lint
 ```
 
-### 4. Start API
+### Build the app for production
 ```bash
-npm start
+quasar build
 ```
+
+### Customize the configuration
+See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
