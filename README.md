@@ -5,7 +5,7 @@
 <br/>
 
 <p align="justify" style="color: #333">
-<strong>CAPACITA - Cursos Inclusivos</strong>, é uma plataforma onde pessoas com deficiencia tem a oportunidade de melhorar o seu nível profissional, a partir dos conteúdos de sites parceiros que iremos sugerir a você. Aqui há cursos, dicas e oportunidades de emprego. Tudo de forma online e gratuitas.
+<strong>CAPACITA - Cursos Inclusivos</strong> é uma plataforma onde pessoas com deficiência tem a oportunidade de melhorar o seu nível profissional, a partir dos conteúdos de sites parceiros que iremos sugerir a você. Aqui há cursos, dicas e oportunidades de emprego. De forma online e gratuitas.
 
 Nossa missão é trazer para você os melhores cursos profissionalizantes. Através de uma rede de instituições de ensino, sua Capacitação estará garantida para o mercado de trabalho.
 </p>
@@ -60,12 +60,9 @@ Alunos da FICR - Faculdade Católica Imaculada Conceição do Recife. 2020
     </td>
     <td align="center" style="border: none;">
       
-
+-----------------------------------------------------------------------------------------------
 
 # CAPACITA - Cursos Inclusivos
-
-Servidor BackEnd do Projeto CAPACITA em desenvolvimento pela Equipe 27 GrowTech. 
-Alunos da FICR - Faculdade Católica Imaculada Conceição do Recife. 2020
 
 ### 1. Install the dependencies
 ```bash
