@@ -42,14 +42,14 @@ exports.createOne = async (req, res) => {
                 .then (async usuarioPcd => {
                     var tiposDeficiencias = []
 
-                    for(deficiencia in deficiencias) {
+                    for(var i = 0 ; i < deficiencias.length; i++) {
                         var dado = {
                             id_usuario_pcd: usuarioPcd.id,
-                            id_tipo_deficiencia: Number.parseInt(deficiencia)+1
+                            id_tipo_deficiencia: deficiencias[i]
                         }
                         tiposDeficiencias.push(dado)
                     }
-
+                
                     console.log(tiposDeficiencias)
 
                     await UsuarioDeficiencia.bulkCreate(tiposDeficiencias).then(async usuarioDeficiencias => {
